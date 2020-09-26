@@ -256,7 +256,7 @@
                 }
             } else {
                 foreach(getJSON('projects.php') as $project=>$data){
-                    if (strpos($path, $data['path']) === 0) {
+                    if ($path && isset($path) && trim($path) !== "" && isset($data['path']) && trim($data['path']) !== "" && strpos($path, $data['path']) === 0) {
                         return true;
                     }
                 }
